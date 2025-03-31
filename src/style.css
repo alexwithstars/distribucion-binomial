@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  color: #eee;
+  background-color: #112;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  & > .input-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+    border-radius: 5px;
+    border: 2px solid #444;
+    box-shadow: inset 0 0 3px #0004;
+    background-color: #333;
+    padding: 8px 24px;
+    & > span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    & > .input-section {
+      display: flex;
+      gap: 8px;
+      & > input[type="range"] {
+        display: flex;
+        position: relative;
+        outline: none;
+        color: #aaa;
+        &::before {
+          content: attr(min);
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 50%;
+          translate: calc(-100% - 5px) 50%;
+        }
+        &#p::after {
+          content: attr(max);
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 50%;
+          translate: calc(100% + 5px) 50%;
+        }
+      }
+    }
+  }
+}
+
+.short-input {
+  display: flex;
+  width: 48px;
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: #eee;
+  box-shadow: inset 0 0 3px #0004;
+  background-color: #333;
+  border: 2px solid #555;
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+    display: none;
+  }
+}
+
+canvas {
+  border-radius: 8px;
+}
