@@ -2,7 +2,6 @@ const memo = {}
 export function factorial (n) {
   if (n < 0) return n
   if (memo[n] !== undefined) return memo[n]
-  console.log('calc', n)
   memo[n] = n <= 1 ? 1 : n * factorial(n - 1)
   return memo[n]
 }
