@@ -25,6 +25,7 @@ const usefulHeight = PARAMS.HEIGHT - PARAMS.Y_OFFSET * 2 - PARAMS.RADIUS * 2
 const usefulWidth = PARAMS.WIDTH - PARAMS.X_OFFSET * 2 - PARAMS.RADIUS * 2
 
 function draw () {
+  const nI = parseInt(n.value)
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   ctx.fillStyle = '#fff'
   ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -49,9 +50,9 @@ function draw () {
     ctx.fillText(i / 10, x + PARAMS.RADIUS + 5, y + 5)
   }
 
-  const gap = usefulWidth / n.value
-  for (let i = 0; i <= n.value; i++) {
-    const y = (1 - probability(n.value, p.value, i)) * usefulHeight
+  const gap = usefulWidth / (nI || 1)
+  for (let i = 0; i <= nI; i++) {
+    const y = (1 - probability(nI, p.value, i)) * usefulHeight
     const x = PARAMS.X_OFFSET * 2 + gap * i
     if (gap > 18 || i % 10 === 0) {
       ctx.strokeStyle = '#000'
