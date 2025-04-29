@@ -81,7 +81,8 @@ function updateValues () {
 
 canvasDPI(PARAMS.WIDTH, PARAMS.HEIGHT, canvas, true)
 nMax.value = n.max
-x.max = n.max
+x.max = n.value
+x.value = n.value
 xValue.value = n.value
 updateValues()
 
