@@ -9,6 +9,13 @@ export function canvasDPI (width, height, canvas, scale = false) {
   scale && canvas.getContext('2d').scale(ratio, ratio)
 }
 
+/**
+ * Verifica que obj sea instancia de type y lo retorna con el tipo correcto.
+ * @template T
+ * @param {unknown} obj - Objeto a verificar
+ * @param {new(...args:any[]) => T} type - Constructor de la clase esperada
+ * @returns {T}
+ */
 export function checkInstance (obj, type) {
   if (!(obj instanceof type)) {
     throw new Error('No se encontro el ' + type.name)

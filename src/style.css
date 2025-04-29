@@ -57,7 +57,7 @@ main {
           bottom: 50%;
           translate: calc(-100% - 5px) 50%;
         }
-        &#p::after {
+        &#p::after, &#x::after {
           content: attr(max);
           display: block;
           position: absolute;
