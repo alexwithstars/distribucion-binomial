@@ -105,6 +105,7 @@ nMax.addEventListener('blur', () => {
 
 // ranges
 n.addEventListener('input', () => {
+  x.max = n.value
   updateValues()
   draw()
 })
